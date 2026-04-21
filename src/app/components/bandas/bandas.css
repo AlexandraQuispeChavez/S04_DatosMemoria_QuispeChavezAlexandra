@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: #0a0514;
+  margin: 0;
+}
+
+.page-wrapper {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background-color: #0a0514;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/BTS_at_the_2019_Melon_Music_Awards.jpg/1280px-BTS_at_the_2019_Melon_Music_Awards.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.page-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 3, 20, 0.80);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: 28px;
+  color: #462e2e;
+  font-weight: 700;
+  text-shadow: 0 2px 15px rgba(193, 184, 158, 0.7);
+}
+
+.header h1 span {
+  color: #e8c96d;
+}
+
+.btn-agregar {
+  background: linear-gradient(135deg, #c9a84c, #f0d878);
+  color: #1a1a2e;
+  border: none;
+  padding: 11px 26px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(201,168,76,0.4);
+}
+
+.btn-agregar:hover {
+  transform: scale(1.05);
+}
+
+/* FORMULARIO */
+.form-card {
+  background: #1e1a3a;
+  border: 1px solid #e8c96d;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+.form-card h2 {
+  margin-bottom: 20px;
+  color: #e8c96d;
+  font-size: 18px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 13px 18px;
+  border-radius: 12px;
+  border: 1px solid #4a4070;
+  background: #2a2550;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+input::placeholder {
+  color: #9090bb;
+}
+
+input:focus {
+  outline: none;
+  border-color: #e8c96d;
+}
+
+.form-btns {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.btn-save {
+  background: linear-gradient(135deg, #c9a84c, #f0d878);
+  color: #1a1a2e;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-save:hover { transform: scale(1.04); }
+
+.btn-cancel {
+  background: #3a3560;
+  color: #ccccee;
+  border: 1px solid #5a5580;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-cancel:hover { background: #4a4570; }
+
+/* TABLA */
+.table-wrapper {
+  background: #12102a;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e8c96d;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: linear-gradient(135deg, #1a1a2e, #2c2c54);
+}
+
+th {
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 13px;
+  color: #e8c96d;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+td {
+  padding: 15px 20px;
+  border-bottom: 1px solid #2a2850;
+  color: #f0f0ff;
+  font-size: 14px;
+  font-weight: 500;
+  background: #12102a;
+}
+
+tr:last-child td { border-bottom: none; }
+
+tr:hover td {
+  background: #1e1c3a;
+  color: #ffffff;
+}
+
+.btn-edit {
+  background: #2d2b6e;
+  color: #a5b4fc;
+  border: 1px solid #4a48a0;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 6px;
+  transition: 0.2s;
+}
+
+.btn-edit:hover { background: #3d3b8e; }
+
+.btn-delete {
+  background: #3a1520;
+  color: #fca5a5;
+  border: 1px solid #7a2535;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  transition: 0.2s;
+}
+
+.btn-delete:hover { background: #4a2030; }
+
+.total {
+  margin-top: 16px;
+  text-align: right;
+  color: #e8c96d;
+  font-size: 14px;
+  font-weight: 700;
+}

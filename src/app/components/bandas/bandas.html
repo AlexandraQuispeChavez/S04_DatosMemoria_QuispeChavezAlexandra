@@ -1,0 +1,49 @@
+<div class="container">
+
+  <div class="header">
+    <h1>KWave – Músicos & Bandas</h1>
+    <button class="btn-agregar" (click)="mostrarFormulario = true">+ Agregar banda</button>
+  </div>
+
+  <!-- FORMULARIO -->
+  <div class="form-card" *ngIf="mostrarFormulario">
+    <h2>{{ modoEdicion ? 'Editar banda' : '➕ Nueva banda' }}</h2>
+    <input type="text" placeholder="Nombre" [(ngModel)]="nuevaBanda.nombre">
+    <input type="text" placeholder="Género musical" [(ngModel)]="nuevaBanda.genero">
+    <input type="text" placeholder="País de origen" [(ngModel)]="nuevaBanda.pais">
+    <div class="form-btns">
+      <button class="btn-save" (click)="modoEdicion ? guardarEdicion() : agregar()">
+        {{ modoEdicion ? 'Guardar cambios' : 'Agregar' }}
+      </button>
+      <button class="btn-cancel" (click)="limpiar()">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- TABLA -->
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Género</th>
+        <th>País</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let banda of bandas">
+        <td>{{ banda.id }}</td>
+        <td>{{ banda.nombre }}</td>
+        <td>{{ banda.genero }}</td>
+        <td>{{ banda.pais }}</td>
+        <td>
+          <button class="btn-edit" (click)="editar(banda)">Editar</button>
+          <button class="btn-delete" (click)="eliminar(banda.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="total">Total de bandas: {{ bandas.length }}</p>
+
+</div>
